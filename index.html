@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi novia hermosa - Flores Amarillas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sunflower: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        cream: '#fafaf9'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Poppins"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffbeb;
+            overflow-x: hidden;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+
+        .floating-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .petal {
+            position: fixed;
+            top: -10vh;
+            background-color: #fde68a;
+            border-radius: 150% 0 150% 0;
+            animation: fall linear infinite;
+            z-index: 10;
+            pointer-events: none;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+        }
+
+        /* Custom glow effect */
+        .glow-gold {
+            box-shadow: 0 0 25px rgba(251, 191, 36, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-sunflower-50 via-amber-50/50 to-white text-zinc-800 min-h-screen flex flex-col justify-between selection:bg-sunflower-200">
+
+    <!-- Contenedor de pétalos flotantes -->
+    <div id="petals-container"></div>
+
+    <!-- Header / Navbar sencillo -->
+    <header class="w-full py-6 px-6 md:px-12 flex justify-between items-center max-w-6xl mx-auto z-20">
+        <div class="flex items-center space-x-2">
+            <span class="text-2xl">🌻</span>
+            <span class="font-serif font-semibold text-lg md:text-xl text-amber-900">Jardín Eterno</span>
+        </div>
+        <div class="text-xs md:text-sm font-medium text-amber-700 bg-sunflower-100/80 px-4 py-1.5 rounded-full border border-sunflower-200 shadow-sm">
+            <i class="fa-solid fa-heart text-red-500 mr-1.5 animate-pulse"></i> Para el amor de mi vida
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 py-8 max-w-4xl mx-auto text-center z-20">
+        
+        <!-- Tarjeta de bienvenida emotiva -->
+        <div class="bg-white/80 backdrop-blur-md border border-sunflower-200 rounded-3xl p-8 sm:p-12 shadow-xl glow-gold mb-12 relative overflow-hidden transition-all duration-500 hover:shadow-2xl">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-sunflower-200 rounded-full blur-2xl opacity-60"></div>
+            <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-amber-200 rounded-full blur-2xl opacity-60"></div>
+            
+            <div class="inline-block p-3 bg-sunflower-100 rounded-2xl mb-6 text-sunflower-600 text-3xl floating-animation">
+                🌻
+            </div>
+
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-amber-950 mb-6 leading-tight">
+                Aunque no hubo para el ramo físico,<br>
+                <span class="text-sunflower-600 italic">te hice un jardín digital eterno</span>
+            </h1>
+
+            <p class="text-zinc-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+                Mi amor, sé que entre la pedida de noviazgo y San Valentín quedé limpio, sin un peso en los bolsillos... pero mi cariño por ti no cabe en ninguna billetera. Como no pude regalarte flores marchitas que duran una semana, te construí este pedacito de sol en la web para recordarte cuánto te amo, con todo el calor y la sinceridad de este corazón Mi Amarilla estas en mi corazon
+            </p>
+
+            <a href="#bouquet-section" class="inline-flex items-center space-x-2 bg-gradient-to-r from-sunflower-500 to-amber-500 hover:from-sunflower-600 hover:to-amber-600 text-white font-medium px-8 py-4 rounded-full shadow-lg hover:shadow-sunflower-500/30 transition-all duration-300 transform hover:-translate-y-0.5">
+                <span>Ver tu ramo interactivo</span>
+                <i class="fa-solid fa-arrow-down text-sm animate-bounce"></i>
+            </a>
+        </div>
+
+        <!-- Sección Interactiva: Ramo de Flores Amarillas -->
+        <section id="bouquet-section" class="w-full mb-16 pt-8">
+            <div class="text-center mb-8">
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-amber-950 mb-2">Toca cada flor de tu ramo</h2>
+                <p class="text-zinc-500 text-sm sm:text-base">Haz clic en cada girasol para descubrir una razón especial por la que te amo.</p>
+            </div>
+
+            <!-- Contenedor del Ramo -->
+            <div class="bg-amber-50/60 border border-sunflower-200 rounded-3xl p-6 sm:p-10 shadow-inner relative">
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-3xl mx-auto" id="flowers-grid">
+                    <!-- Las flores se cargarán dinámicamente o se insertarán aquí -->
+                </div>
+
+                <!-- Cuadro de Mensaje Desplegable -->
+                <div id="message-card" class="mt-8 bg-white border border-sunflower-300 rounded-2xl p-6 shadow-md max-w-xl mx-auto hidden transition-all duration-300 transform scale-95 opacity-0">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-amber-600 bg-sunflower-100 px-3 py-1 rounded-full">Mensaje especial</span>
+                        <button onclick="closeMessage()" class="text-zinc-400 hover:text-zinc-600"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <p id="flower-message-text" class="text-zinc-700 font-medium text-lg italic font-serif"></p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección de Dedicatoria y Recuerdos -->
+        <section class="w-full bg-white border border-sunflower-200 rounded-3xl p-8 sm:p-12 shadow-xl mb-12 text-left relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-sunflower-100 rounded-bl-full opacity-50 pointer-events-none"></div>
+            
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-10 h-10 rounded-full bg-sunflower-100 flex items-center justify-center text-sunflower-600 text-lg">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-amber-950">De Barranquilla con amor y sinceridad</h3>
+            </div>
+
+            <div class="space-y-4 text-zinc-600 leading-relaxed text-sm sm:text-base">
+                <p>
+                    Entre la pedida de noviazgo, San Valentín y el carro, la cuenta bancaria quedó respirando por aparato jajajaja, pero la creatividad y el amor genuino no necesitan chequera, quería tener un detalle único contigo en este Día de las Flores Amarillas porque te mereces el universo entero y mucho más.
+                </p>
+                <p>
+                    Cada momento que hemos pasado juntos, desde las risas hasta los planes improvisado, se han vuelto mis favoritos. Gracias por tu paciencia, por tu complicidad y por quererme tal cual soy. Este girasol digital nunca se va a marchitar, al igual que lo que siento por ti.
+                </p>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-sunflower-100 flex flex-col sm:flex-row justify-between items-center text-sm text-amber-800 font-medium gap-4">
+                <span class="flex items-center"><i class="fa-solid fa-location-dot text-sunflower-600 mr-2"></i> Hecho con amor desde Curramba</span>
+                <span class="bg-sunflower-50 px-4 py-2 rounded-xl border border-sunflower-200 font-serif italic text-amber-900">"Tu novio que te ama con el alma"</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 text-center text-xs text-amber-800/70 border-t border-sunflower-200/60 z-20">
+        <p>Creado especialmente para la novia más hermosa del mundo 🌻 &copy; 2026</p>
+    </footer>
+
+    <!-- JavaScript para interactividad y pétalos -->
+    <script>
+        // Generar pétalos cayendo
+        function createPetal() {
+            const container = document.getElementById('petals-container');
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            // Tamaño aleatorio entre 10px y 20px
+            const size = Math.random() * 10 + 10;
+            petal.style.width = `${size}px`;
+            petal.style.height = `${size * 1.5}px`;
+            
+            // Posición horizontal aleatoria
+            petal.style.left = `${Math.random() * 100}vw`;
+            
+            // Duración de caída aleatoria entre 6s y 12s
+            const duration = Math.random() * 6 + 6;
+            petal.style.animationDuration = `${duration}s`;
+            
+            // Retraso aleatorio
+            petal.style.animationDelay = `${Math.random() * 5}s`;
+
+            container.appendChild(petal);
+
+            // Eliminar pétalo cuando termine la animación
+            setTimeout(() => {
+                petal.remove();
+            }, (duration + 5) * 1000);
+        }
+
+        // Crear varios pétalos al inicio y luego constantemente
+        for (let i = 0; i < 15; i++) {
+            createPetal();
+        }
+        setInterval(createPetal, 800);
+
+        // Razones por las que la amas (asociadas a las flores)
+        const reasons = [
+            "Te amo por esa sonrisa tan hermosa que ilumina mis días más grises.",
+            "Te amo porque desde que llegaste, mi vida tiene más color y alegría.",
+            "Te amo por tu forma de ser tan auténtica, noble y especial.",
+            "Te amo porque cada momento a tu lado se siente como un domingo tranquilo.",
+            "Te amo porque contigo puedo ser 100% yo mismo sin miedo a nada.",
+            "Te amo por cómo me miras y cómo me haces sentir en cada abrazo.",
+            "Te amo por tu paciencia infinita y tu apoyo incondicional conmigo.",
+            "Te amo porque incluso en cero, teniéndote a ti siento que lo tengo todo.",
+            "Te amo por tus ocurrencias y por todas las risas que compartimos.",
+            "Te amo porque eres, sin duda, mi mejor casualidad y mi gran bendición."
+        ];
+
+        // Renderizar las flores en el ramo
+        const flowersGrid = document.getElementById('flowers-grid');
+        
+        reasons.forEach((reason, index) => {
+            const flowerBtn = document.createElement('button');
+            flowerBtn.className = "group bg-white hover:bg-sunflower-100 border border-sunflower-200 hover:border-sunflower-400 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center transform hover:-translate-y-1 cursor-pointer focus:outline-none";
+            flowerBtn.innerHTML = `
+                <div class="text-4xl sm:text-5xl mb-3 group-hover:scale-110 transition-transform duration-300 floating-animation" style="animation-delay: ${index * 0.2}s;">🌻</div>
+                <span class="text-xs font-semibold text-amber-900 group-hover:text-amber-950">Flor #${index + 1}</span>
+            `;
+            
+            flowerBtn.addEventListener('click', () => {
+                showFlowerMessage(reason);
+            });
+
+            flowersGrid.appendChild(flowerBtn);
+        });
+
+        function showFlowerMessage(text) {
+            const card = document.getElementById('message-card');
+            const textElement = document.getElementById('flower-message-text');
+            
+            textElement.textContent = `"${text}"`;
+            card.classList.remove('hidden');
+            
+            // Forzar reflow para animación suave
+            setTimeout(() => {
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            }, 10);
+
+            // Hacer scroll suave hacia el mensaje
+            card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function closeMessage() {
+            const card = document.getElementById('message-card');
+            card.classList.remove('scale-100', 'opacity-100');
+            card.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                card.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
